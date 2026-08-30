@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPilot AI | Student Login</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="login.css">
+
+</head>
+
+
+<body>
+
+
+<div class="auth-page">
+
+
+    <!-- LEFT SIDE -->
+
+    <section class="auth-info">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i>🎓</i>
+            </div>
+
+            <div>
+
+                <h2>StudyPilot <span>AI</span></h2>
+
+                <p>by CodeSprint AI</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-content">
+
+            <span class="badge">
+                AI-Powered Learning
+            </span>
+
+            <h1>
+                Your smarter way
+                <span>to study.</span>
+            </h1>
+
+            <p>
+                Create your student profile and let StudyPilot AI
+                personalize your learning journey.
+            </p>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Personalized Learning
+                    </strong>
+
+                    <small>
+                        Learning recommendations based on your profile.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Smart Study Planning
+                    </strong>
+
+                    <small>
+                        Organize your preparation efficiently.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Performance Analysis
+                    </strong>
+
+                    <small>
+                        Understand your strengths and weak areas.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © <span id="leftYear"></span>
+            StudyPilot AI
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <section class="auth-box">
+
+
+        <!-- LOGIN -->
+
+        <div class="form-container"
+             id="loginForm">
+
+            <div class="form-heading">
+
+                <span class="mini-icon">
+                    👋
+                </span>
+
+                <h1>
+                    Welcome Back
+                </h1>
+
+                <p>
+                    Login to continue your StudyPilot journey.
+                </p>
+
+            </div>
+
+
+            <form id="studentLoginForm">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Student Email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>✉</span>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your college email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="eye-button"
+                            onclick="togglePassword('loginPassword', this)">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    Login to StudyPilot
+
+                    <span>→</span>
+
+                </button>
+
+
+                <p class="switch-text">
+
+                    Don't have an account?
+
+                    <button
+                        type="button"
+                        onclick="showSignup()">
+
+                        Create New Account
+
+                    </button>
+
+                </p>
+
+
+                <div
+                    class="message"
+                    id="loginMessage">
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- SIGNUP -->
+
+        <div class="form-container signup-container"
+             id="signupForm">
+
+            <div class="form-heading">
+
+                <span class="mini-icon">
+                    🚀
+                </span>
+
+                <h1>
+                    Create Account
+                </h1>
+
+                <p>
+                    Create your Student Profile to get started.
+                </p>
+
+            </div>
+
+
+            <form id="studentSignupForm">
+
+
+                <!-- NAME -->
+
+                <div class="input-group">
+
+                    <label>
+                        Student Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label>
+                        Student Email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>✉</span>
+
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOB -->
+
+                <div class="input-group">
+
+                    <label>
+                        Date of Birth
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>📅</span>
+
+                        <input
+                            type="date"
+                            id="dateOfBirth"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COLLEGE -->
+
+                <div class="input-group">
+
+                    <label>
+                        College Name
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>🏫</span>
+
+                        <input
+                            type="text"
+                            id="collegeName"
+                            placeholder="Enter your college name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEMESTER -->
+
+                <div class="input-group">
+
+                    <label>
+                        Semester
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>📚</span>
+
+                        <select
+                            id="semester"
+                            required>
+
+                            <option value="">
+                                Select Semester
+                            </option>
+
+                            <option value="1st Semester">
+                                1st Semester
+                            </option>
+
+                            <option value="2nd Semester">
+                                2nd Semester
+                            </option>
+
+                            <option value="3rd Semester">
+                                3rd Semester
+                            </option>
+
+                            <option value="4th Semester">
+                                4th Semester
+                            </option>
+
+                            <option value="5th Semester">
+                                5th Semester
+                            </option>
+
+                            <option value="6th Semester">
+                                6th Semester
+                            </option>
+
+                            <option value="7th Semester">
+                                7th Semester
+                            </option>
+
+                            <option value="8th Semester">
+                                8th Semester
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label>
+                        Create New Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>🔐</span>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Create a strong password"
+                            minlength="6"
+                            required>
+
+                        <button
+                            type="button"
+                            class="eye-button"
+                            onclick="togglePassword('newPassword', this)">
+
+                            👁
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="input-group">
+
+                    <label>
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>🔑</span>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            minlength="6"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    Create Student Account
+
+                    <span>→</span>
+
+                </button>
+
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <button
+                        type="button"
+                        onclick="showLogin()">
+
+                        Login Here
+
+                    </button>
+
+                </p>
+
+
+                <div
+                    class="message"
+                    id="signupMessage">
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyPilot AI | Help</title>
+  <link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="main.html" class="logo">CodeSprint <span>AI</span></a>
+
+  <div class="nav-links">
+    <a href="main.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="analysis.html">Analysis</a>
+  </div>
+
+  <button class="profile-btn" onclick="location.href='dashboard.html'">
+    <span>◉</span> Dashboard
+  </button>
+</nav>
+
+<main class="page">
+
+  <section class="hero">
+    <div class="assistant-icon">◉</div>
+    <div>
+      <span class="eyebrow">NEED HELP?</span>
+      <h1>Your AI Study Assistant is here.</h1>
+      <p>Get guidance whenever you are stuck, confused or need help planning your studies.</p>
+    </div>
+  </section>
+
+  <section class="assistant-layout">
+
+    <aside class="sidebar">
+      <h3>Quick Help</h3>
+
+      <button class="quick active" data-prompt="Explain my difficult topics in simple language.">
+        <span>💡</span>
+        <div><b>Explain a Topic</b><small>Make difficult concepts easy</small></div>
+      </button>
+
+      <button class="quick" data-prompt="Summarize my uploaded study material.">
+        <span>📚</span>
+        <div><b>Summarize Material</b><small>Quick revision notes</small></div>
+      </button>
+
+      <button class="quick" data-prompt="Help me solve my study doubt.">
+        <span>❓</span>
+        <div><b>Solve My Doubt</b><small>Step-by-step guidance</small></div>
+      </button>
+
+      <button class="quick" data-prompt="Generate important questions from my material.">
+        <span>📝</span>
+        <div><b>Generate Questions</b><small>Practice for exams</small></div>
+      </button>
+
+      <button class="quick" data-prompt="Tell me what I should study today.">
+        <span>🎯</span>
+        <div><b>What Should I Study?</b><small>Personalized recommendation</small></div>
+      </button>
+
+      <button class="quick" data-prompt="Analyze my mistakes and tell me what to improve.">
+        <span>📊</span>
+        <div><b>Improve Weak Areas</b><small>Learn from mistakes</small></div>
+      </button>
+    </aside>
+
+    <section class="chat-card">
+      <div class="chat-header">
+        <div class="bot-avatar">✦</div>
+        <div>
+          <h2>StudyPilot AI Assistant</h2>
+          <span><i></i> Ready to help you learn</span>
+        </div>
+        <button class="clear-btn" id="clearChat">Clear</button>
+      </div>
+
+      <div class="chat" id="chat">
+        <div class="message ai">
+          <div class="avatar">✦</div>
+          <div class="bubble">
+            <b>Hello! I'm your StudyPilot AI Assistant 👋</b>
+            <p>I can help you understand your study material, create questions, plan your revision and identify weak areas.</p>
+            <p><strong>What would you like help with?</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="suggestions">
+        <button data-prompt="What should I study today?">🎯 Study today</button>
+        <button data-prompt="Explain my weak topics.">📊 Weak topics</button>
+        <button data-prompt="Give me a quick revision.">🔄 Quick revision</button>
+        <button data-prompt="Generate 5 important questions.">📝 Questions</button>
+      </div>
+
+      <form class="input-area" id="chatForm">
+        <textarea id="userInput" rows="1" placeholder="Ask StudyPilot anything about your studies..."></textarea>
+        <button type="submit" id="sendBtn">➤</button>
+      </form>
+
+      <p class="privacy">StudyPilot uses your saved study data on this device to personalize guidance.</p>
+    </section>
+
+  </section>
+
+</main>
+
+<script src="help.js"></script>
+</body>
+</html>

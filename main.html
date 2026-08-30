@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPilot AI | CodeSprint AI</title>
+
+    <meta name="description"
+        content="StudyPilot AI - AI-powered personalized learning, study planning, quizzes and performance analysis.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MAIN CONTAINER
+    ====================================================== -->
+
+    <div class="page-container">
+
+        <!-- =================================================
+             NAVBAR
+        ================================================== -->
+
+        <header class="navbar">
+
+            <!-- LOGO -->
+
+            <a href="#" class="logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="logo-text">
+
+                    <div>
+                        StudyPilot <span>AI</span>
+                    </div>
+
+                    <small>
+                        by CodeSprint AI
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav class="nav-menu">
+
+                <a href="login.html" class="nav-button">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Sign Up / Login</span>
+
+                </a>
+                 <a href="dashboard.html" class="nav-button">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <a href="#about" class="nav-button">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>About Us</span>
+
+                </a>
+
+
+                <a href="#help" class="nav-button">
+
+                    <i class="fa-regular fa-circle-question"></i>
+
+                    <span>Help</span>
+
+                </a>
+
+
+                <a href="#analysis" class="nav-button">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <span>Analysis</span>
+
+                </a>
+
+
+                <a href="#contact" class="nav-button">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <span>Contact</span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button class="mobile-menu-button" id="mobileMenuButton">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </header>
+
+
+        <!-- MOBILE NAVIGATION -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="signup.html">
+                <i class="fa-solid fa-user"></i>
+                Sign Up / Login
+            </a>
+
+            <a href="#about">
+                <i class="fa-solid fa-circle-info"></i>
+                About Us
+            </a>
+
+            <a href="#help">
+                <i class="fa-regular fa-circle-question"></i>
+                Help
+            </a>
+
+            <a href="#analysis">
+                <i class="fa-solid fa-chart-column"></i>
+                Analysis
+            </a>
+
+            <a href="#contact">
+                <i class="fa-solid fa-phone"></i>
+                Contact
+            </a>
+
+        </div>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <!-- Decorative shapes -->
+
+            <div class="hero-shape shape-left"></div>
+
+            <div class="hero-shape shape-right"></div>
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    AI-Powered Learning Companion
+
+                </div>
+
+
+                <h1>
+
+                    Study Smarter,
+                    <br>
+
+                    Achieve <span>Better</span>
+
+                </h1>
+
+
+                <p>
+
+                    StudyPilot AI analyzes your study material,
+                    creates personalized plans, generates quizzes
+                    and helps you master every topic effectively.
+
+                </p>
+
+
+                <!-- HERO BUTTONS -->
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn"
+                        onclick="goToSignup()">
+
+                        Get Started
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <button class="secondary-btn"
+                        onclick="scrollToHowItWorks()">
+
+                        How It Works
+
+                        <i class="fa-solid fa-circle-play"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- TRUST ITEMS -->
+
+                <div class="trust-items">
+
+                    <div class="trust-item">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>
+                            Secure & Private
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <i class="fa-solid fa-certificate"></i>
+
+                        <span>
+                            AI-Powered
+                        </span>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>
+                            Student Focused
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 HERO LAPTOP
+            ================================================== -->
+
+            <div class="hero-visual">
+
+                <div class="laptop-glow"></div>
+
+                <div class="laptop">
+
+                    <div class="laptop-screen">
+
+                        <!-- SCREEN HEADER -->
+
+                        <div class="screen-header">
+
+                            <div class="screen-logo">
+
+                                <i class="fa-solid fa-graduation-cap"></i>
+
+                                <span>
+                                    StudyPilot
+                                </span>
+
+                            </div>
+
+                            <div class="profile-circle">
+                                R
+                            </div>
+
+                        </div>
+
+
+                        <div class="screen-body">
+
+                            <!-- SIDEBAR -->
+
+                            <aside class="dashboard-sidebar">
+
+                                <div class="side-item active">
+                                    <i class="fa-solid fa-house"></i>
+                                    <span>Dashboard</span>
+                                </div>
+
+                                <div class="side-item">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>My Plan</span>
+                                </div>
+
+                                <div class="side-item">
+                                    <i class="fa-solid fa-book"></i>
+                                    <span>Topics</span>
+                                </div>
+
+                                <div class="side-item">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span>Quizzes</span>
+                                </div>
+
+                                <div class="side-item">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    <span>Analytics</span>
+                                </div>
+
+                            </aside>
+
+
+                            <!-- DASHBOARD -->
+
+                            <main class="dashboard-content">
+
+                                <h3>
+                                    Welcome back, Rohit! 👋
+                                </h3>
+
+                                <p class="dashboard-subtitle">
+                                    Here's your learning progress today.
+                                </p>
+
+
+                                <!-- STAT CARDS -->
+
+                                <div class="dashboard-cards">
+
+                                    <div class="dash-card">
+
+                                        <span>
+                                            Topics Covered
+                                        </span>
+
+                                        <strong>
+                                            24
+                                        </strong>
+
+                                        <small>
+                                            of 40
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="dash-card">
+
+                                        <span>
+                                            Accuracy
+                                        </span>
+
+                                        <strong>
+                                            87%
+                                        </strong>
+
+                                        <small class="good">
+                                            Great!
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="dash-card">
+
+                                        <span>
+                                            Study Streak
+                                        </span>
+
+                                        <strong>
+                                            12
+                                        </strong>
+
+                                        <small>
+                                            Days
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ANALYTICS -->
+
+                                <div class="analytics-row">
+
+                                    <div class="weekly-chart">
+
+                                        <div class="chart-heading">
+
+                                            <strong>
+                                                Weekly Progress
+                                            </strong>
+
+                                            <span>
+                                                +20%
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="chart">
+
+                                            <div class="chart-line"></div>
+
+                                            <div class="chart-dot dot-one"></div>
+                                            <div class="chart-dot dot-two"></div>
+                                            <div class="chart-dot dot-three"></div>
+                                            <div class="chart-dot dot-four"></div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- CIRCLE PROGRESS -->
+
+                                    <div class="overall-progress">
+
+                                        <span>
+                                            Overall Progress
+                                        </span>
+
+                                        <div class="progress-circle">
+
+                                            <strong>
+                                                72%
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </main>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LAPTOP BASE -->
+
+                    <div class="laptop-base">
+
+                        <div class="keyboard"></div>
+
+                        <div class="trackpad"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOOK DECORATION -->
+
+                <div class="book-stack">
+
+                    <div class="book book-one"></div>
+                    <div class="book book-two"></div>
+                    <div class="book book-three"></div>
+
+                    <div class="graduation-cap">
+
+                        <div class="cap-top"></div>
+
+                        <div class="cap-base"></div>
+
+                        <div class="cap-tassel"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FEATURES
+        ================================================== -->
+
+        <section class="features-section" id="analysis">
+
+            <div class="section-title">
+
+                <span>
+                    HOW STUDYPILOT WORKS
+                </span>
+
+                <h2>
+                    Your Complete
+                    <strong>AI Study Companion</strong>
+                </h2>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <!-- FEATURE 1 -->
+
+                <div class="feature-card">
+
+                    <div class="number blue">
+                        1
+                    </div>
+
+                    <div class="feature-icon purple">
+
+                        <i class="fa-solid fa-file-arrow-up"></i>
+
+                    </div>
+
+                    <h3>
+                        Upload Study Material
+                    </h3>
+
+                    <p>
+                        Upload your syllabus, notes, PDFs and
+                        previous-year papers for AI analysis.
+                    </p>
+
+                   <button onclick="showFeature('upload')">
+    Upload Study Material
+</button>
+
+                </div>
+
+
+                <!-- FEATURE 2 -->
+
+                <div class="feature-card">
+
+                    <div class="number green">
+                        2
+                    </div>
+
+                    <div class="feature-icon green-bg">
+
+                        <i class="fa-solid fa-brain"></i>
+
+                    </div>
+
+                    <h3>
+                        AI Analysis
+                    </h3>
+
+                    <p>
+                        Our AI analyzes your material and identifies
+                        important topics, concepts and patterns.
+                    </p>
+
+                   <button onclick="showFeature('analysis')">
+    AI Analysis
+</button>
+
+                </div>
+
+
+                <!-- FEATURE 3 -->
+
+                <div class="feature-card">
+
+                    <div class="number blue">
+                        3
+                    </div>
+
+                    <div class="feature-icon blue-bg">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                    </div>
+
+                    <h3>
+                        Personalized Study Plan
+                    </h3>
+
+                    <p>
+                        Get a customized study plan based on your
+                        exam date, available time and learning goals.
+                    </p>
+
+                    
+<button onclick="showFeature('plan')">
+    Smart Study Plan
+</button>
+
+                </div>
+
+
+                <!-- FEATURE 4 -->
+
+                <div class="feature-card">
+
+                    <div class="number orange">
+                        4
+                    </div>
+
+                    <div class="feature-icon orange-bg">
+
+                        <i class="fa-solid fa-circle-question"></i>
+
+                    </div>
+
+                    <h3>
+                        AI Quiz & Practice
+                    </h3>
+
+                    <p>
+                        Take AI-generated quizzes and practice
+                        questions to test your understanding.
+                    </p>
+
+                    <button onclick="showFeature('quiz')">
+    AI Quiz & Practice
+</button>
+
+
+                </div>
+
+
+                <!-- FEATURE 5 -->
+
+                <div class="feature-card">
+
+                    <div class="number pink">
+                        5
+                    </div>
+
+                    <div class="feature-icon pink-bg">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <h3>
+                        Track & Improve
+                    </h3>
+
+                    <p>
+                        Track your progress, accuracy and weak topics.
+                        Improve continuously with smart suggestions.
+                    </p>
+
+                    <button onclick="showFeature('progress')">
+    Track & Improve
+</button>
+
+                </div>
+
+
+                <!-- FEATURE 6 -->
+
+                <div class="feature-card">
+
+                    <div class="number purple-number">
+                        6
+                    </div>
+
+                    <div class="feature-icon purple-bg">
+
+                        <i class="fa-solid fa-bullseye"></i>
+
+                    </div>
+
+                    <h3>
+                        Master Your Exam
+                    </h3>
+
+                    <p>
+                        Focus on weak areas, revise intelligently and
+                        master every topic with confidence.
+                    </p>
+<button onclick="showFeature('master')">
+    Master Your Exam
+</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================== -->
+
+        <section class="about-section" id="about">
+
+            <div class="about-content">
+
+                <span class="section-small-title">
+                    ABOUT STUDYPILOT AI
+                </span>
+
+                <h2>
+                    Learning that
+                    <span>adapts to you.</span>
+                </h2>
+
+                <p>
+
+                    StudyPilot AI is designed to solve a common
+                    student problem: spending hours studying without
+                    knowing what to study, how much to study and
+                    where improvement is needed.
+
+                </p>
+
+                <p>
+
+                    Instead of giving every student the same learning
+                    experience, StudyPilot analyzes individual study
+                    material and performance to create a more
+                    personalized preparation journey.
+
+                </p>
+
+
+                <div class="about-points">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Personalized learning
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        AI-based topic analysis
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Smart exam preparation
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        Continuous performance tracking
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-card-icon">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+                <h3>
+                    One Platform.
+                </h3>
+
+                <h3>
+                    Smarter Learning.
+                </h3>
+
+                <p>
+                    Upload → Analyze → Plan → Practice → Improve
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HELP
+        ================================================== -->
+
+        <section class="help-section" id="help">
+
+            <div class="help-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+            </div>
+
+            <div class="help-text">
+
+                <span>
+                    NEED HELP?
+                </span>
+
+                <h2>
+                    Your AI Study Assistant is here.
+                </h2>
+
+                <p>
+                    Get guidance whenever you are stuck,
+                    confused or need help planning your studies.
+                </p>
+
+            </div>
+
+            <button onclick="openHelp()">
+
+                Get Help
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section class="contact-section" id="contact">
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Email
+                    </span>
+
+                    <a href="mailto:khkhrrohit@gmail.com">
+                        khkhrrohit@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-divider"></div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Name
+                    </span>
+
+                    <strong>
+                        Rohit Khokhar
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-divider"></div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Phone
+                    </span>
+
+                    <a href="tel:+918099317347">
+                        8099317347
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            <div class="footer-left">
+
+                © <span id="year"></span>
+                StudyPilot AI by CodeSprint AI.
+                All rights reserved.
+
+            </div>
+
+
+            <div class="footer-right">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    AI-Powered Learning Platform
+                </span>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="main.js"></script>
+
+</body>
+</html>

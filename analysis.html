@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StudyPilot AI | Analysis</title><link rel="stylesheet" href="analysis.css"></head>
+<body><nav><a class="logo" href="main.html">CodeSprint <span>AI</span></a><a href="dashboard.html">Dashboard</a></nav>
+<main><header><span class="badge">02 • AI ANALYSIS</span><h1>Understand what to <span>study</span></h1><p>StudyPilot analyzes the actual text extracted from your uploaded material.</p></header>
+<div id="loading" class="card"><div class="spinner"></div><h2>Analyzing your material…</h2><p>Finding chapters, topics, keywords and question patterns.</p></div>
+<div id="result" hidden><section class="grid"><div class="card wide"><small>AI SUMMARY</small><h2>Study overview</h2><p id="summary"></p></div><div class="card"><small>DOCUMENTS</small><h2 id="docCount">0</h2><p>Materials analyzed</p></div></section>
+<section class="card"><small>CHAPTERS / TOPIC CLUSTERS</small><h2>What your material contains</h2><div id="chapters" class="chips"></div></section>
+<section class="card"><small>IMPORTANT TOPICS</small><h2>High-value concepts</h2><div id="topics"></div></section>
+<section class="card"><small>CONTENT INSIGHTS</small><div id="insights"></div></section>
+<div class="actions"><button onclick="location.href='upload.html'">← Upload More</button><button class="primary" onclick="generatePlan()">Create Smart Study Plan →</button></div></div></main>
+<script>
+const KEY='studypilot_ai_data'; let data=JSON.parse(localStorage.getItem(KEY)||'{}');
+const text=(data.sourceText||'').trim();
+function words(s){return s.toLowerCase().match(/[a-zA-Z][a-zA-Z-]{3,}/g)||[]}
+function analyze(){
+ if(!text){document.getElementById('loading').innerHTML='<h2>No material found</h2><p>Upload material first.</p>';return}
+ const ws=words(text), freq={}; ws.forEach(w=>freq[w]=(freq[w]||0)+1);
+ const stop=new Set('this that with from have will your their there about which these those into than also been were they them then when where what such only more some very using used each other through because between while after before should would could does'.split(' '));
+ const keywords=Object.entries(freq).filter(([w])=>!stop.has(w)).sort((a,b)=>b[1]-a[1]).slice(0,18).map(x=>x[0]);
+ const sentences=text.split(/[.!?]\s+/).filter(x=>x.length>70).slice(0,4);
+ const chapters=text.split(/(?:chapter|unit|module)\s+([0-9IVX]+)/ig).filter(x=>x.trim()).slice(0,12).map(x=>x.trim().slice(0,90));
+ const chapterList=chapters.length?chapters:keywords.slice(0,8).map((x,i)=>`Topic ${i+1}: ${x}`);
+ data.analysis={completed:true,summary:sentences.join('. ').slice(0,1100)||`The material contains approximately ${ws.length} searchable words. The most frequent concepts are ${keywords.slice(0,8).join(', ')}.`,chapters:chapterList.map((name,i)=>({name,priority:i<4?'High':'Medium',estimatedTime:i<4?'2 Hours':'1 Hour'})),importantTopics:keywords, difficultTopics:keywords.slice(-5),pyqTopics:keywords.slice(0,8),recommendations:['Start with high-frequency concepts','Study difficult topics twice','Practice questions after each topic','Revise before the Master Exam']};
+ data.lastUpdated=new Date().toISOString(); localStorage.setItem(KEY,JSON.stringify(data)); render();
+}
+function render(){document.getElementById('loading').hidden=true;document.getElementById('result').hidden=false;document.getElementById('summary').textContent=data.analysis.summary;document.getElementById('docCount').textContent=(data.materials||[]).length;document.getElementById('chapters').innerHTML=data.analysis.chapters.map(c=>`<div class="chapter"><b>${esc(c.name)}</b><span>${c.priority} • ${c.estimatedTime}</span></div>`).join('');document.getElementById('topics').innerHTML=data.analysis.importantTopics.map((x,i)=>`<div class="topic"><b>${i+1}</b>${esc(x)}</div>`).join('');document.getElementById('insights').innerHTML=`<p><b>Weak/difficult indicators:</b> ${data.analysis.difficultTopics.join(', ')}</p><p><b>Potential high-value/PYQ concepts:</b> ${data.analysis.pyqTopics.join(', ')}</p>`}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function generatePlan(){data.studyPlan=data.analysis.chapters.map((c,i)=>({day:i+1,chapter:c.name,priority:c.priority,duration:c.estimatedTime,steps:['Read and understand concepts','Make short notes','Solve related examples/PYQs','Attempt practice questions','Revise mistakes'],reference:data.materials?.map(x=>x.name).join(', ')}));localStorage.setItem(KEY,JSON.stringify(data));location.href='studyplan.html'}
+setTimeout(analyze,500);
+</script></body></html>

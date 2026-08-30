@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPilot AI | Student Dashboard</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+    <!-- ================================================
+         SIDEBAR
+    ================================================= -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-logo">
+
+            <div class="logo-icon">
+                🎓
+            </div>
+
+            <div>
+
+                <strong>
+                    StudyPilot <span>AI</span>
+                </strong>
+
+                <small>
+                    CodeSprint AI
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="sidebar-menu">
+
+
+            <a href="#overview"
+               class="menu-item active">
+
+                <span>⌂</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="#profile"
+               class="menu-item">
+
+                <span>👤</span>
+
+                My Profile
+
+            </a>
+
+
+            <a href="#learning"
+               class="menu-item">
+
+                <span>📚</span>
+
+                My Learning
+
+            </a>
+
+
+            <a href="#analytics"
+               class="menu-item">
+
+                <span>📊</span>
+
+                Analytics
+
+            </a>
+
+
+            <a href="#ai-tools"
+               class="menu-item">
+
+                <span>🤖</span>
+
+                AI Tools
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+
+                <span>↪</span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================================
+         MAIN
+    ================================================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <span class="top-small">
+                    STUDENT DASHBOARD
+                </span>
+
+                <h1>
+                    Welcome back,
+                    <span id="topStudentName">
+                        Student
+                    </span> 👋
+                </h1>
+
+            </div>
+
+
+            <div class="top-profile">
+
+                <div
+                    class="avatar"
+                    id="topAvatar">
+
+                    S
+
+                </div>
+
+                <div>
+
+                    <strong id="topName">
+                        Student
+                    </strong>
+
+                    <small>
+                        Student Account
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==========================================
+             WELCOME CARD
+        =========================================== -->
+
+        <section class="welcome-card"
+                 id="overview">
+
+
+            <div>
+
+                <span class="welcome-label">
+                    STUDYPILOT AI
+                </span>
+
+                <h2>
+                    Let's make your
+                    <span>study journey smarter.</span>
+                </h2>
+
+                <p>
+                    Your personalized learning dashboard
+                    is ready. Continue learning and improve
+                    your performance.
+                </p>
+
+                <button onclick="startLearning()">
+
+                    Start Learning
+
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+
+            <div class="welcome-illustration">
+
+                <div class="circle-bg"></div>
+
+                <div class="book-icon">
+                    📚
+                </div>
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             STATISTICS
+        =========================================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    📚
+                </div>
+
+                <div>
+
+                    <span>
+                        Topics
+                    </span>
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <small>
+                        Completed
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Quiz Accuracy
+                    </span>
+
+                    <strong>
+                        0%
+                    </strong>
+
+                    <small>
+                        Start practicing
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    🔥
+                </div>
+
+                <div>
+
+                    <span>
+                        Study Streak
+                    </span>
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <small>
+                        Days
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    🎯
+                </div>
+
+                <div>
+
+                    <span>
+                        Goal
+                    </span>
+
+                    <strong>
+                        0%
+                    </strong>
+
+                    <small>
+                        Progress
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             PROFILE
+        =========================================== -->
+
+        <section class="dashboard-section"
+                 id="profile">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        STUDENT INFORMATION
+                    </span>
+
+                    <h2>
+                        My Profile
+                    </h2>
+
+                </div>
+
+                <div class="verified">
+                    ✓ Profile Active
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+
+                <div class="large-avatar"
+                     id="largeAvatar">
+
+                    S
+
+                </div>
+
+
+                <div class="profile-details">
+
+
+                    <div class="detail">
+
+                        <span>
+                            Student Name
+                        </span>
+
+                        <strong id="studentName">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            Student Email
+                        </span>
+
+                        <strong id="studentEmail">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            Date of Birth
+                        </span>
+
+                        <strong id="studentDob">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            College Name
+                        </span>
+
+                        <strong id="studentCollege">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            Semester
+                        </span>
+
+                        <strong id="studentSemester">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            Account Status
+                        </span>
+
+                        <strong class="active-status">
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             LEARNING
+        =========================================== -->
+
+        <section class="dashboard-section"
+                 id="learning">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        YOUR LEARNING
+                    </span>
+
+                    <h2>
+                        Continue Learning
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="learning-grid">
+
+
+                <div class="learning-card">
+
+                    <div class="learning-icon purple-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        AI Study Planner
+                    </h3>
+
+                    <p>
+                        Create a personalized study schedule
+                        according to your goals.
+                    </p>
+
+                    <button onclick="featureComingSoon()">
+                        Create Plan →
+                    </button>
+
+                </div>
+
+
+                <div class="learning-card">
+
+                    <div class="learning-icon blue-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Study Material
+                    </h3>
+
+                    <p>
+                        Upload notes and study material for
+                        intelligent AI analysis.
+                    </p>
+
+                    <button onclick="featureComingSoon()">
+                        Upload Material →
+                    </button>
+
+                </div>
+
+
+                <div class="learning-card">
+
+                    <div class="learning-icon green-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        AI Quiz
+                    </h3>
+
+                    <p>
+                        Test your knowledge with AI-generated
+                        questions and quizzes.
+                    </p>
+
+                    <button onclick="featureComingSoon()">
+                        Start Quiz →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             ANALYTICS
+        =========================================== -->
+
+        <section class="dashboard-section"
+                 id="analytics">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        PERFORMANCE
+                    </span>
+
+                    <h2>
+                        Your Analytics
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+
+                <div class="empty-chart">
+
+                    <div class="chart-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Your learning analytics will appear here
+                    </h3>
+
+                    <p>
+                        Complete quizzes and study sessions
+                        to start generating your performance data.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             AI TOOLS
+        =========================================== -->
+
+        <section class="dashboard-section"
+                 id="ai-tools">
+
+
+            <div class="ai-tools-card">
+
+                <div>
+
+                    <span>
+                        STUDYPILOT AI
+                    </span>
+
+                    <h2>
+                        Your AI Learning Assistant
+                    </h2>
+
+                    <p>
+                        Ask questions, understand difficult
+                        concepts and get personalized study guidance.
+                    </p>
+
+                </div>
+
+
+                
+            </div>
+
+        </section>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <span>
+                © <span id="year"></span>
+                StudyPilot AI
+            </span>
+
+            <span>
+                by CodeSprint AI
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- LOGOUT MODAL -->
+
+<div class="logout-modal"
+     id="logoutModal">
+
+    <div class="logout-box">
+
+        <div class="logout-icon">
+            ↪
+        </div>
+
+        <h2>
+            Logout from StudyPilot?
+        </h2>
+
+        <p>
+            You will need to login again to access your dashboard.
+        </p>
+
+
+        <div class="logout-actions">
+
+            <button
+                onclick="closeLogoutModal()"
+                class="cancel-btn">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                onclick="confirmLogout()"
+                class="confirm-logout">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPilot AI | CodeSprint AI</title>
+
+    <meta
+        name="description"
+        content="StudyPilot AI is an intelligent personalized learning platform that helps students study smarter using AI."
+    >
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <span class="orb orb-one"></span>
+        <span class="orb orb-two"></span>
+        <span class="grid"></span>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>StudyPilot<span> AI</span></h2>
+                <small>by CodeSprint AI</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#how">How It Works</a>
+            <a href="#features">Features</a>
+            <a href="#difference">Why Us</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="nav-button" onclick="continueToApp()">
+            Get Started <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    <span class="pulse"></span>
+                    AI-Powered Personalized Learning
+                </div>
+
+                <h1>
+                    Study Smarter.
+                    <span>Learn Better.</span>
+                    <br>
+                    Achieve More.
+                </h1>
+
+                <p class="hero-text">
+                    StudyPilot AI transforms your syllabus, notes and previous-year
+                    questions into a personalized study plan designed around
+                    <strong>your learning needs.</strong>
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn" onclick="continueToApp()">
+                        Start Learning
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <button class="secondary-btn" onclick="scrollToSection('how')">
+                        <i class="fa-solid fa-play"></i>
+                        See How It Works
+                    </button>
+
+                </div>
+
+                <div class="trust-row">
+
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Secure Learning
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-brain"></i>
+                        AI Powered
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        Student Focused
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO DASHBOARD -->
+            <div class="hero-dashboard">
+
+                <div class="dashboard-glow"></div>
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-top">
+
+                        <div>
+                            <span class="mini-label">STUDYPILOT AI</span>
+                            <h3>Your Learning Overview</h3>
+                        </div>
+
+                        <div class="ai-status">
+                            <span></span>
+                            AI Active
+                        </div>
+
+                    </div>
+
+
+                    <div class="score-box">
+
+                        <div class="score-circle">
+                            <div>
+                                <strong>82%</strong>
+                                <small>Ready</small>
+                            </div>
+                        </div>
+
+                        <div class="score-info">
+                            <span>Exam Readiness</span>
+                            <h4>Great Progress! 🚀</h4>
+                            <p>Your personalized plan is working.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-stats">
+
+                        <div class="stat">
+                            <i class="fa-solid fa-book-open"></i>
+                            <div>
+                                <strong>12</strong>
+                                <span>Topics</span>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div>
+                                <strong>08</strong>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <div>
+                                <strong>91%</strong>
+                                <span>Accuracy</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-heading">
+                            <span>Today's Progress</span>
+                            <strong>75%</strong>
+                        </div>
+
+                        <div class="progress-bar">
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section id="how" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    HOW IT WORKS
+                </span>
+
+                <h2>
+                    Your AI Study Journey,
+                    <span>Made Simple.</span>
+                </h2>
+
+                <p>
+                    StudyPilot AI turns your study material into an intelligent
+                    learning journey in just a few simple steps.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+
+                    <div class="step-number">01</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+
+                    <h3>Upload Your Material</h3>
+
+                    <p>
+                        Upload your syllabus, notes, PDFs and previous-year
+                        question papers.
+                    </p>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">02</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h3>AI Understands It</h3>
+
+                    <p>
+                        Our AI analyzes topics, concepts, questions and
+                        learning priorities from your material.
+                    </p>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">03</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <h3>Get Your Plan</h3>
+
+                    <p>
+                        Receive a personalized study schedule based on your
+                        exam date, available time and performance.
+                    </p>
+
+                </div>
+
+
+                <div class="connector"></div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">04</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h3>Improve Continuously</h3>
+
+                    <p>
+                        Practice quizzes, identify weak areas and let AI
+                        adapt your revision plan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section id="features" class="section features-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    POWERFUL FEATURES
+                </span>
+
+                <h2>
+                    Everything You Need to
+                    <span>Study Smarter.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card large">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <h3>Smart Material Analysis</h3>
+
+                    <p>
+                        StudyPilot AI understands your syllabus, notes and
+                        previous-year papers instead of simply storing them.
+                    </p>
+
+                    <div class="feature-demo">
+                        <span>Topics Detected</span>
+                        <strong>24</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+
+                    <h3>Personalized Study Plan</h3>
+
+                    <p>
+                        Get a study schedule designed around your exam date,
+                        time and current performance.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>Important Topic Detection</h3>
+
+                    <p>
+                        AI identifies high-priority topics using your syllabus
+                        and previous-year questions.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+
+                    <h3>AI Quiz Generator</h3>
+
+                    <p>
+                        Generate personalized questions to test your
+                        understanding and prepare for exams.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+
+                    <h3>Performance Analytics</h3>
+
+                    <p>
+                        Track your progress and discover exactly where
+                        you need more practice.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card large">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+
+                    <h3>Adaptive Learning</h3>
+
+                    <p>
+                        Your study plan changes according to your performance.
+                        Weak topic? StudyPilot automatically gives it more
+                        attention.
+                    </p>
+
+                    <div class="adaptive-flow">
+                        <span>Test</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Analyze</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Adapt</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIFFERENCE -->
+        <section id="difference" class="section difference-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">
+                    WHY STUDYPILOT AI?
+                </span>
+
+                <h2>
+                    Not Just Another
+                    <span>Study App.</span>
+                </h2>
+
+                <p>
+                    Traditional learning platforms provide content.
+                    StudyPilot focuses on understanding what YOU need next.
+                </p>
+
+            </div>
+
+
+            <div class="comparison">
+
+                <div class="comparison-card traditional">
+
+                    <div class="comparison-title">
+                        <i class="fa-solid fa-book"></i>
+                        Traditional Learning
+                    </div>
+
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            Same content for everyone
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            Manual study planning
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            Difficult to identify weak areas
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            Static learning material
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            Limited performance feedback
+                        </li>
+                    </ul>
+
+                </div>
+
+
+                <div class="vs">
+                    VS
+                </div>
+
+
+                <div class="comparison-card studypilot">
+
+                    <div class="comparison-title">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        StudyPilot AI
+                    </div>
+
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Personalized for every student
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            AI-generated study plan
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Automatic weak-topic detection
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Adaptive learning system
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Continuous performance analysis
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPACT -->
+        <section class="impact-section">
+
+            <div class="impact-content">
+
+                <span class="section-tag">
+                    OUR VISION
+                </span>
+
+                <h2>
+                    Every Student Deserves
+                    <span>a Personal Study Mentor.</span>
+                </h2>
+
+                <p>
+                    StudyPilot AI aims to make personalized learning accessible
+                    by combining educational content, artificial intelligence
+                    and continuous performance analysis into one simple platform.
+                </p>
+
+                <div class="impact-points">
+
+                    <div>
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <span>Student-Centered</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-brain"></i>
+                        <span>AI-Powered</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Performance Driven</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST -->
+        <section id="about" class="trust-section">
+
+            <div class="trust-card">
+
+                <div class="trust-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <div>
+                    <span class="section-tag">RESPONSIBLE TECHNOLOGY</span>
+
+                    <h2>
+                        Built for Students.
+                        <span>Designed for Responsible Learning.</span>
+                    </h2>
+
+                    <p>
+                        StudyPilot AI is designed as an educational technology
+                        platform to support students with personalized learning,
+                        structured preparation and AI-assisted study guidance.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="cta-section">
+
+            <div class="cta-card">
+
+                <div class="cta-glow"></div>
+
+                <span class="section-tag">
+                    READY TO START?
+                </span>
+
+                <h2>
+                    Your Smarter Study Journey
+                    <span>Starts Here.</span>
+                </h2>
+
+                <p>
+                    Stop studying harder. Start studying smarter with StudyPilot AI.
+                </p>
+
+                <button class="primary-btn big" onclick="continueToApp()">
+                    Continue to StudyPilot AI
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <h2>StudyPilot<span> AI</span></h2>
+                        <small>by CodeSprint AI</small>
+                    </div>
+
+                </div>
+
+                <p>
+                    AI-powered personalized learning for the next generation
+                    of students.
+                </p>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>Project Contact</h3>
+
+                <a href="mailto:khkhrrohit@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    khkhrrohit@gmail.com
+                </a>
+
+                <a href="tel:+918099317347">
+                    <i class="fa-solid fa-phone"></i>
+                    +91 80993 17347
+                </a>
+
+                <span>
+                    <i class="fa-solid fa-user"></i>
+                    Rohit Khokhar — Team Lead
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> CodeSprint AI. All rights reserved.
+            </span>
+
+            <span>
+                StudyPilot AI
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Back To Top -->
+    <button class="top-button" id="topButton">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <script src="index.js"></script>
+
+</body>
+</html>

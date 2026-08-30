@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StudyPilot AI | Study Plan</title><link rel="stylesheet" href="studyplan.css"></head>
+<body><nav><a class="logo" href="main.html">CodeSprint <span>AI</span></a><a href="dashboard.html">Dashboard</a></nav><main><header><span>03 • SMART STUDY PLAN</span><h1>Your path to <b>exam readiness</b></h1><p>Generated from the chapters and topics found in your material.</p></header><div id="plan"></div><div class="actions"><button onclick="location.href='analysis.html'">← Analysis</button><button class="primary" onclick="location.href='practice.html'">Start AI Practice →</button></div></main>
+<script>
+const K='studypilot_ai_data',d=JSON.parse(localStorage.getItem(K)||'{}');const plan=d.studyPlan||[];
+if(!plan.length){document.getElementById('plan').innerHTML='<section class="card"><h2>Plan not available</h2><p>Complete analysis first.</p></section>'}
+else document.getElementById('plan').innerHTML=plan.map(x=>`<section class="card"><div class="day">DAY ${x.day}</div><h2>${esc(x.chapter)}</h2><div class="meta">${x.priority} Priority • ${x.duration}</div><ol>${x.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol><p class="ref">Reference: ${esc(x.reference||'Uploaded material')}</p></section>`).join('');
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+</script></body></html>

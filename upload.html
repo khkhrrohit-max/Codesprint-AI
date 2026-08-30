@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>StudyPilot AI | Upload Material</title>
+<link rel="stylesheet" href="upload.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
+<script src="https://unpkg.com/mammoth@1.8.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+<nav><a href="main.html" class="logo">CodeSprint <span>AI</span></a><a href="dashboard.html">Dashboard</a></nav>
+<main>
+<section class="hero"><span class="badge">01 • STUDY MATERIAL</span><h1>Upload your <span>study material</span></h1><p>Upload syllabus, notes, textbooks or PYQs. StudyPilot extracts the actual text and prepares it for analysis.</p></section>
+<section class="card">
+<label class="drop" id="dropZone"><input id="files" type="file" multiple accept=".pdf,.txt,.docx"><div class="icon">↑</div><h2>Drop files here</h2><p>PDF, DOCX or TXT • Multiple files supported</p><button type="button">Choose Files</button></label>
+<div id="fileList"></div>
+<div class="actions"><button class="secondary" onclick="location.href='main.html'">Back</button><button id="analyzeBtn" class="primary" disabled>Extract & Continue →</button></div>
+<div id="status"></div>
+</section>
+</main>
+<script type="module">
+const fileInput=document.getElementById('files'), list=document.getElementById('fileList'), btn=document.getElementById('analyzeBtn'), status=document.getElementById('status');
+let selected=[];
+fileInput.onchange=e=>{selected=[...e.target.files];render();};
+const dz=document.getElementById('dropZone');
+['dragenter','dragover'].forEach(x=>dz.addEventListener(x,e=>{e.preventDefault();dz.classList.add('over')}));
+['dragleave','drop'].forEach(x=>dz.addEventListener(x,e=>{e.preventDefault();dz.classList.remove('over')}));
+dz.addEventListener('drop',e=>{selected=[...e.dataTransfer.files];render()});
+function render(){list.innerHTML=selected.map((f,i)=>`<div class="file"><b>${escapeHtml(f.name)}</b><span>${(f.size/1024).toFixed(1)} KB</span><button onclick="removeFile(${i})">×</button></div>`).join('');btn.disabled=!selected.length}
+window.removeFile=i=>{selected.splice(i,1);render()};
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+async function pdfText(file){
+ const pdfjs=await import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs");
+ pdfjs.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
+ const pdf=await pdfjs.getDocument({data:await file.arrayBuffer()}).promise; let text=[];
+ for(let p=1;p<=pdf.numPages;p++){const page=await pdf.getPage(p);const c=await page.getTextContent();text.push(c.items.map(x=>x.str).join(' '))}
+ return text.join('\n');
+}
+async function extract(file){
+ if(file.name.toLowerCase().endsWith('.pdf')) return await pdfText(file);
+ if(file.name.toLowerCase().endsWith('.docx')) return (await mammoth.extractRawText({arrayBuffer:await file.arrayBuffer()})).value;
+ return await file.text();
+}
+btn.onclick=async()=>{
+ btn.disabled=true; status.textContent="Extracting actual document text…";
+ try{
+  const docs=[];
+  for(const f of selected){const text=(await extract(f)).replace(/\s+/g,' ').trim(); if(!text) throw new Error(`${f.name} contains no selectable text. Scanned PDFs need OCR.`); docs.push({name:f.name,type:f.type,size:f.size,text,uploadedAt:new Date().toISOString()});}
+  const data=JSON.parse(localStorage.getItem('studypilot_ai_data')||'{}');
+  data.materials=docs; data.sourceText=docs.map(d=>`SOURCE: ${d.name}\n${d.text}`).join('\n\n');
+  data.analysis={...(data.analysis||{}),completed:false};
+  localStorage.setItem('studypilot_ai_data',JSON.stringify(data));
+  location.href='analysis.html';
+ }catch(e){status.textContent="Error: "+e.message;btn.disabled=false}
+};
+</script>
+</body></html>
